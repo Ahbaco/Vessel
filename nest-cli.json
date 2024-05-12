@@ -12,12 +12,6 @@
       }
     },
     "typeCheck": true,
-    "assets": [
-      {
-        "include": "resources/**/*",
-        "watchAssets": true
-      }
-    ],
     "webpack": true,
     "tsConfigPath": "apps/api/tsconfig.app.json"
   },

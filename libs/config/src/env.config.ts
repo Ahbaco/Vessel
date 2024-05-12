@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { load } from "js-yaml";
 
 let YAML_CONFIG_FILENAME = "local.yaml";
@@ -24,7 +23,8 @@ switch (env) {
 }
 
 export default () => {
-  return load(
-    readFileSync(join(__dirname, `../../resources/envs/${YAML_CONFIG_FILENAME}`), "utf8"),
-  ) as Record<string, never>;
+  return load(readFileSync(`resources/envs/${YAML_CONFIG_FILENAME}`, "utf8")) as Record<
+    string,
+    never
+  >;
 };

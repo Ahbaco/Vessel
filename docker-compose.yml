@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: Vessel.API
+    build:
+      context: .
+      dockerfile: ./apps/api/Dockerfile
+      target: dev
+    command: pnpm run start:dev api
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3333:3333'  
