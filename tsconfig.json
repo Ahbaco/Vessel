@@ -24,7 +24,8 @@
     "types": ["@types/node"],
     "baseUrl": "./",
     "rootDir": "./",
-    "outDir": "./build",
+    "outDir": "./dist",
+    "paths": {}
   },
   "ts-node": {
     "swc": true,
