@@ -25,7 +25,10 @@
     "baseUrl": "./",
     "rootDir": "./",
     "outDir": "./dist",
-    "paths": {}
+    "paths": {
+      "@vessel/config": ["libs/config/src"],
+      "@vessel/config/*": ["libs/config/src/*"]
+    }
   },
   "ts-node": {
     "swc": true,
