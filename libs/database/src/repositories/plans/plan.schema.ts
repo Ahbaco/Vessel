@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { SchemaDocument } from "@vessel/database";
 import { Types } from "mongoose";
-import { PlanLabel } from "./enums/plan-label.enum";
-import { PlanPeriod } from "./enums/plan-period.enum";
+import { PlanLabel } from "../../enums/plan-label.enum";
+import { PlanPeriod } from "../../enums/plan-period.enum";
 
 @Schema({ versionKey: false, timestamps: true })
 export class Plan extends SchemaDocument {
