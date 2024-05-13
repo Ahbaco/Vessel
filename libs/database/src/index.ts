@@ -3,13 +3,13 @@
  */
 
 export * from "./database.module";
-export * from "./repository";
-export * from "./schema";
 export * from "./connections/master.connection";
 export * from "./connections/system.connection";
 export * from "./enums/connection.enum";
 export * from "./enums/plan-label.enum";
 export * from "./enums/plan-period.enum";
+export * from "./repositories/repository";
+export * from "./repositories/schema";
 export * from "./repositories/claims/claim.module";
 export * from "./repositories/claims/claim.repository";
 export * from "./repositories/claims/claim.schema";
