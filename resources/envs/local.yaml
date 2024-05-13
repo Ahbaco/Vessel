@@ -5,8 +5,9 @@ app:
   webDir: 'http://localhost:3000'
   domain: 'http://localhost:3333'
 mongodb:
-  master: 'mongodb://localhost:27017/master'
-  system: 'mongodb://localhost:27017/system'
+  uri: 'mongodb://mongodb/master'
+  master: 'master_local_db'
+  system: 'system_local_db'
 rate:
   ttl: 6000
   limit: 10

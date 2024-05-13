@@ -12,6 +12,7 @@ export const configSchema = required(
     }),
     // DATABASE
     mongodb: object({
+      uri: string(),
       master: string(),
       system: string(),
     }),

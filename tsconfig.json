@@ -11,7 +11,7 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "strictPropertyInitialization": true,
+    "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "strictBindCallApply": true,
@@ -27,7 +27,9 @@
     "outDir": "./dist",
     "paths": {
       "@vessel/config": ["libs/config/src"],
-      "@vessel/config/*": ["libs/config/src/*"]
+      "@vessel/config/*": ["libs/config/src/*"],
+      "@vessel/database": ["libs/database/src"],
+      "@vessel/database/*": ["libs/database/src/*"]
     }
   },
   "ts-node": {
