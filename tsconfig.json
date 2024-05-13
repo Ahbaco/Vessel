@@ -29,7 +29,9 @@
       "@vessel/config": ["libs/config/src"],
       "@vessel/config/*": ["libs/config/src/*"],
       "@vessel/database": ["libs/database/src"],
-      "@vessel/database/*": ["libs/database/src/*"]
+      "@vessel/database/*": ["libs/database/src/*"],
+      "@vessel/repositories": ["libs/repositories/src"],
+      "@vessel/repositories/*": ["libs/repositories/src/*"]
     }
   },
   "ts-node": {
