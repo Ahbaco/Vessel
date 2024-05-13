@@ -34,3 +34,5 @@ smtp:
   password: '123456'
   secure: false
   ignoreTLS: true
+rmq:
+  uri: 'amqp://rmq:5672'

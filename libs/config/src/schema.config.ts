@@ -52,5 +52,9 @@ export const configSchema = required(
       ignoreTLS: boolean(),
       secure: boolean(),
     }),
+    // RMQ
+    rmq: object({
+      uri: string(),
+    }),
   }),
 );

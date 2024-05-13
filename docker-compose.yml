@@ -25,6 +25,11 @@ services:
       - 'mongodb_data:/bitnami/mongodb'
     ports:
       - '27017:27017'
+  rmq:
+    container_name: Vessel.RMQ
+    image: rabbitmq
+    ports:
+      - '5672:5672'
 
 volumes:
   mongodb_data:

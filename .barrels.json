@@ -1,4 +1,4 @@
 {
-  "directory": ["libs/config/src", "libs/database/src"],
+  "directory": ["libs/config/src", "libs/database/src", "libs/common/src"],
   "delete": true
 }
