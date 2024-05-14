@@ -9,7 +9,7 @@ export class Plan extends SchemaDocument {
   @Prop({ required: true, unique: true })
   name: string;
 
-  @Prop({ required: true, enum: PlanLabel })
+  @Prop({ required: true, type: String, enum: PlanLabel })
   label: PlanLabel;
 
   @Prop({ required: true, type: Types.Decimal128 })
@@ -18,7 +18,7 @@ export class Plan extends SchemaDocument {
   @Prop({ required: true, unique: true })
   stripePriceId: string;
 
-  @Prop({ required: true, enum: PlanPeriod })
+  @Prop({ required: true, type: Number, enum: PlanPeriod })
   period: PlanPeriod;
 }
 
