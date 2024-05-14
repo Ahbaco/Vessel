@@ -3,8 +3,10 @@ import { boolean, number, object, required, string } from "valibot";
 export const configSchema = required(
   object({
     // APP
-    app: object({
+    api: object({
       port: number(),
+    }),
+    app: object({
       name: string(),
       secret: string(),
       webDir: string(),

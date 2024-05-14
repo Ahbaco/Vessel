@@ -1,9 +1,10 @@
 app:
-  port: 3333
   name: 'Ahbaco Backend'
   secret: 'kLYrGyES3ASLDdz6hD5DeVX0gqIa2Df3'
   webDir: 'http://localhost:3000'
   domain: 'http://localhost:3333'
+api:
+  port: 3333
 mongodb:
   uri: 'mongodb://mongodb/master'
   master: 'master_local_db'
