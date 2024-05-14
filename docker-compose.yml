@@ -15,9 +15,23 @@ services:
       - '3333:3333'
     depends_on:
       - mongodb
+      - rmq
+      - auth
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+  auth:
+    build:
+      context: .
+      dockerfile: ./apps/auth/Dockerfile
+      target: dev
+    command: pnpm run start:dev auth
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongodb
+      - rmq
   mongodb:
     container_name: Vessel.MongoDB
     image: docker.io/bitnami/mongodb:7.0
