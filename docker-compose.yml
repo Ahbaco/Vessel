@@ -21,6 +21,7 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
   auth:
+    container_name: Vessel.Auth
     build:
       context: .
       dockerfile: ./apps/auth/Dockerfile
