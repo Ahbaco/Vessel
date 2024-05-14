@@ -1,8 +1,17 @@
-import { Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
+import { ClientProxy } from "@nestjs/microservices";
+import { InjectAuthService } from "@vessel/common";
+import { lastValueFrom } from "rxjs";
 
 @Injectable()
 export class ApiService {
-  getHello(): string {
-    return "Hello World!";
+  constructor(@InjectAuthService() private authClient: ClientProxy) {}
+
+  async sayHi() {
+    try {
+      return await lastValueFrom(this.authClient.send("hello", { message: "Hello from API" }));
+    } catch (error) {
+      throw new HttpException(error.message, 400);
+    }
   }
 }

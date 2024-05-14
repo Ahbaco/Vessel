@@ -5,6 +5,7 @@ import { RmqService } from "./rmq.service";
 
 interface RmqModuleOptions {
   name: string;
+  queue: string;
 }
 
 @Module({
@@ -13,7 +14,7 @@ interface RmqModuleOptions {
 })
 // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export class RmqModule {
-  static register({ name }: RmqModuleOptions): DynamicModule {
+  static register({ name, queue }: RmqModuleOptions): DynamicModule {
     return {
       module: RmqModule,
       imports: [
@@ -24,7 +25,7 @@ export class RmqModule {
               transport: Transport.RMQ,
               options: {
                 urls: [config.get<string>("rmq.uri") as string],
-                queue: name,
+                queue,
               },
             }),
             inject: [ConfigService],

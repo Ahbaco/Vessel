@@ -1,21 +1,30 @@
 import { ValidationPipe } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
-import { RmqOptions } from "@nestjs/microservices";
-import { RmqQueues, RmqService } from "@vessel/common";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { ApiModule } from "./api.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiModule);
-  // Configure RMQ microservice
-  const rmq = app.get<RmqService>(RmqService);
-  app.connectMicroservice<RmqOptions>(rmq.getOptions(RmqQueues.Api, true));
   // Validation Pipe
   app.useGlobalPipes(new ValidationPipe());
   // Config Service
   const config = app.get(ConfigService);
+  // Setup Swagger
+  const swagger = new DocumentBuilder()
+    .setTitle(config.get("app.name") || "My Docs")
+    .setDescription("Tenancy Backend")
+    .setVersion("0.1")
+    .addSecurity("bearer", {
+      type: "http",
+      scheme: "bearer",
+    })
+    .build();
 
-  await app.startAllMicroservices();
+  const document = SwaggerModule.createDocument(app, swagger);
+  SwaggerModule.setup("docs", app, document, {
+    jsonDocumentUrl: "/docs.json",
+  });
   await app.listen(config.get("api.port") as number);
 }
 bootstrap();
