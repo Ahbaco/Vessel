@@ -3,6 +3,7 @@
  */
 
 export * from "./decorators/inject-auth-service.decorator";
+export * from "./i18n/localization.module";
 export * from "./rmq/rmq-queues.enum";
 export * from "./rmq/rmq-services.enum";
 export * from "./rmq/rmq.module";
