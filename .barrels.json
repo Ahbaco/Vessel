@@ -1,4 +1,12 @@
 {
-  "directory": ["libs/config/src", "libs/database/src", "libs/common/src"],
+  "directory": [
+    "libs/config/src",
+    "libs/database/src",
+    "libs/common/src/decorators",
+    "libs/common/src/dtos",
+    "libs/common/src/enums",
+    "libs/common/src/i18n",
+    "libs/common/src/rmq"
+  ],
   "delete": true
 }

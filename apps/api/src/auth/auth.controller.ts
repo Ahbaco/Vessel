@@ -1,14 +1,9 @@
 import { Body, Controller, Post } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
 import { ApiTags } from "@nestjs/swagger";
-import {
-  ApiError,
-  ApiReturn,
-  AuthEvent,
-  CreateAdminUserDto,
-  InjectAuthService,
-} from "@vessel/common";
-
+import { ApiError, ApiReturn, InjectAuthService } from "@vessel/common/decorators";
+import { CreateAdminUserDto } from "@vessel/common/dtos";
+import { AuthEvent } from "@vessel/common/enums";
 import { lastValueFrom } from "rxjs";
 import { RegisterModeratorResponse } from "./dtos/register-moderator.response";
 
