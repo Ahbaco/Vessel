@@ -16,6 +16,17 @@ export class LocalizationInterceptor implements NestInterceptor {
   }
 
   intercept(_context: ExecutionContext, next: CallHandler): Observable<Response> {
-    return next.handle().pipe(map((data) => ({ ...data, message: this.translate(data.message) })));
+    return next.handle().pipe(
+      map((data) => {
+        if (data.message) {
+          return {
+            ...data,
+            message: this.translate(data.message),
+          };
+        }
+
+        return data;
+      }),
+    );
   }
 }
