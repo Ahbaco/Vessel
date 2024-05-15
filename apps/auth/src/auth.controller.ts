@@ -1,10 +1,14 @@
 import { Controller } from "@nestjs/common";
 import { MessagePattern, Payload } from "@nestjs/microservices";
+import { CreateAdminUserDto } from "@vessel/common/dtos";
+import { AuthEvent } from "@vessel/common/enums";
 
 @Controller()
 export class AuthController {
-  @MessagePattern("hello")
-  async handleHello(@Payload() data: Record<string, string>) {
-    return { message: `Hello from Auth, ${data.message}` };
+  @MessagePattern(AuthEvent.RegisterAdmin)
+  async registerAdmin(@Payload() input: CreateAdminUserDto) {
+    return {
+      data: input,
+    };
   }
 }

@@ -1,6 +1,6 @@
 import { NestFactory } from "@nestjs/core";
 import { RmqOptions } from "@nestjs/microservices";
-import { RmqQueues, RmqService } from "@vessel/common";
+import { RmqQueues, RmqService } from "@vessel/common/rmq";
 import { AuthModule } from "./auth.module";
 
 async function bootstrap() {

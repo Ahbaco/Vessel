@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { RmqModule } from "@vessel/common";
+import { RmqModule } from "@vessel/common/rmq";
 import { EnvModule } from "@vessel/config";
 import { DatabaseModule } from "@vessel/database";
 import { AuthController } from "./auth.controller";
