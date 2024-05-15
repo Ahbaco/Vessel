@@ -6,10 +6,6 @@ import { SchemaDocument } from "@vessel/database";
 export class Claim extends SchemaDocument {
   @ApiProperty()
   @Prop({ required: true })
-  name: string;
-
-  @ApiProperty()
-  @Prop({ required: true })
   action: string;
 
   @ApiProperty()

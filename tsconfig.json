@@ -24,7 +24,6 @@
     "types": ["@types/node"],
     "baseUrl": "./",
     "rootDir": "./",
-    "outDir": "./dist",
     "paths": {
       "@vessel/config": ["libs/config/src"],
       "@vessel/config/*": ["libs/config/src/*"],

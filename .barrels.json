@@ -6,7 +6,8 @@
     "libs/common/src/dtos",
     "libs/common/src/enums",
     "libs/common/src/i18n",
-    "libs/common/src/rmq"
+    "libs/common/src/rmq",
+    "libs/common/src/constants"
   ],
   "delete": true
 }
