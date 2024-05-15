@@ -1,8 +1,7 @@
 import { Module } from "@nestjs/common";
 import { LocalizationModule, RmqModule, RmqQueues, RmqServices } from "@vessel/common";
 import { EnvModule } from "@vessel/config";
-import { ApiController } from "./api.controller";
-import { ApiService } from "./api.service";
+import { AuthController } from "./auth/auth.controller";
 
 @Module({
   imports: [
@@ -10,7 +9,6 @@ import { ApiService } from "./api.service";
     EnvModule,
     RmqModule.register({ name: RmqServices.Auth, queue: RmqQueues.Auth }),
   ],
-  controllers: [ApiController],
-  providers: [ApiService],
+  controllers: [AuthController],
 })
 export class ApiModule {}
