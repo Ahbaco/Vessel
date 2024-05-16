@@ -26,10 +26,10 @@ redis:
   username: 'default'
   database: 0
 smtp:
-  transport: 'smtps://trap:trap@localhost:8003'
+  transport: 'smtps://trap:trap@smtp:8003'
   emailFrom: 'no-reply@example.com'
   senderName: 'My API'
-  host: 'localhost'
+  host: 'smtp'
   port: 8003
   user: 'user@mailhogss.com'
   password: '123456'
