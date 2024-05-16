@@ -13,6 +13,7 @@ export class AuthController {
   constructor(@InjectAuthService() private authClient: ClientProxy) {}
 
   @ApiError(422)
+  @ApiError(400)
   @ApiReturn(RegisterModeratorResponse, 201)
   @Post("register/admin")
   async registerModerator(@Body() input: CreateAdminUserDto) {

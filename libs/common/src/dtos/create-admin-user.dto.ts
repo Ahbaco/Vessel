@@ -1,26 +1,30 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty } from "class-validator";
+import { Role } from "@vessel/database";
+import { IsEnum, IsNotEmpty, NotEquals } from "class-validator";
 import { Match } from "../decorators/match.decorator";
 
 export class CreateAdminUserDto {
   @IsNotEmpty()
-  @ApiProperty({ default: "Vladimil" })
+  @ApiProperty({ default: "Homer" })
   name: string;
 
   @IsNotEmpty()
-  @ApiProperty({ default: "Jimenez" })
+  @ApiProperty({ default: "Simpson" })
   surname: string;
 
   @IsNotEmpty()
-  @ApiProperty({ default: "vladimil.js@ahbaco.com" })
+  @ApiProperty({ default: "Homer.s@ahbaco.com" })
   email: string;
 
-  @Match("email")
+  @Match("email", { message: "validation.email_mismatch" })
   @IsNotEmpty()
-  @ApiProperty({ default: "vladimil.js@ahbaco.com" })
+  @ApiProperty({ default: "Homer.s@ahbaco.com" })
   confirmEmail: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  claims: string[];
+  @ApiProperty({ enum: Role, type: () => Role })
+  @IsEnum(Role)
+  @NotEquals(Role.TenantAdmin)
+  @NotEquals(Role.TenantMember)
+  @NotEquals(Role.TenantOwner)
+  role: Role;
 }
