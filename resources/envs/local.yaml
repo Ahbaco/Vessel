@@ -6,7 +6,7 @@ app:
 api:
   port: 3333
 mongodb:
-  uri: 'mongodb://mongodb/master'
+  uri: 'mongodb://mongodb:27017'
   master: 'master_local_db'
   system: 'system_local_db'
 rate:
