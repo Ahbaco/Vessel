@@ -3,3 +3,4 @@
  */
 
 export * from "./auth-event.enum";
+export * from "./notification-event.enum";
