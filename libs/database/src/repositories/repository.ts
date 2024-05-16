@@ -52,7 +52,7 @@ export abstract class Repository<TDoc extends SchemaDocument> {
   ) {}
 
   async store(input: StoreOptions<TDoc>): Promise<TDoc> {
-    return this.model.create({
+    return await this.model.create({
       _id: new Types.ObjectId(),
       ...input,
     });
