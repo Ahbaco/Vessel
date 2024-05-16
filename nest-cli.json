@@ -8,7 +8,10 @@
     "builder": {
       "type": "swc",
       "options": {
-        "extensions": [".ts", ".tsx"]
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
       }
     },
     "typeCheck": true,
@@ -70,6 +73,15 @@
       "sourceRoot": "apps/cli/src",
       "compilerOptions": {
         "tsConfigPath": "apps/cli/tsconfig.app.json"
+      }
+    },
+    "notification": {
+      "type": "application",
+      "root": "apps/notification",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification/tsconfig.app.json"
       }
     }
   }

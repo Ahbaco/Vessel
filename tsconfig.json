@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
-    "lib": ["ESNext"],
+    "lib": [
+      "ESNext"
+    ],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "isolatedModules": true,
@@ -21,16 +23,30 @@
     "declaration": false,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
-    "types": ["@types/node"],
+    "types": [
+      "@types/node"
+    ],
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
-      "@vessel/config": ["libs/config/src"],
-      "@vessel/config/*": ["libs/config/src/*"],
-      "@vessel/database": ["libs/database/src"],
-      "@vessel/database/*": ["libs/database/src/*"],
-      "@vessel/common": ["libs/common/src"],
-      "@vessel/common/*": ["libs/common/src/*"]
+      "@vessel/config": [
+        "libs/config/src"
+      ],
+      "@vessel/config/*": [
+        "libs/config/src/*"
+      ],
+      "@vessel/database": [
+        "libs/database/src"
+      ],
+      "@vessel/database/*": [
+        "libs/database/src/*"
+      ],
+      "@vessel/common": [
+        "libs/common/src"
+      ],
+      "@vessel/common/*": [
+        "libs/common/src/*"
+      ]
     }
   },
   "ts-node": {
