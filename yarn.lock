@@ -1511,6 +1511,97 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/biome@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/biome@npm:1.7.3"
+  dependencies:
+    "@biomejs/cli-darwin-arm64": "npm:1.7.3"
+    "@biomejs/cli-darwin-x64": "npm:1.7.3"
+    "@biomejs/cli-linux-arm64": "npm:1.7.3"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.7.3"
+    "@biomejs/cli-linux-x64": "npm:1.7.3"
+    "@biomejs/cli-linux-x64-musl": "npm:1.7.3"
+    "@biomejs/cli-win32-arm64": "npm:1.7.3"
+    "@biomejs/cli-win32-x64": "npm:1.7.3"
+  dependenciesMeta:
+    "@biomejs/cli-darwin-arm64":
+      optional: true
+    "@biomejs/cli-darwin-x64":
+      optional: true
+    "@biomejs/cli-linux-arm64":
+      optional: true
+    "@biomejs/cli-linux-arm64-musl":
+      optional: true
+    "@biomejs/cli-linux-x64":
+      optional: true
+    "@biomejs/cli-linux-x64-musl":
+      optional: true
+    "@biomejs/cli-win32-arm64":
+      optional: true
+    "@biomejs/cli-win32-x64":
+      optional: true
+  bin:
+    biome: bin/biome
+  checksum: 10c0/05c95bb4b1fbf1b252cf2124f012f69a00ff5599ecac002b7e3004bfcd927e3d7b5f4935739096b5184653ec96b44ddcc36809d059682e5378bde20c836fb111
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.7.3"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-x64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-darwin-x64@npm:1.7.3"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64-musl@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.7.3"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-linux-arm64@npm:1.7.3"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64-musl@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.7.3"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-linux-x64@npm:1.7.3"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-arm64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-win32-arm64@npm:1.7.3"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-x64@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@biomejs/cli-win32-x64@npm:1.7.3"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -3024,6 +3115,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vessel/source@workspace:."
   dependencies:
+    "@biomejs/biome": "npm:^1.7.3"
     "@nestjs/common": "npm:^10.0.2"
     "@nestjs/core": "npm:^10.0.2"
     "@nestjs/platform-express": "npm:^10.0.2"
@@ -3040,9 +3132,11 @@ __metadata:
     "@swc/helpers": "npm:~0.5.2"
     "@types/node": "npm:~18.16.9"
     axios: "npm:^1.6.0"
+    lefthook: "npm:^1.6.12"
     nx: "npm:19.0.4"
     reflect-metadata: "npm:^0.1.13"
     rxjs: "npm:^7.8.0"
+    swc-loader: "npm:^0.2.6"
     ts-node: "npm:10.9.1"
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.4.2"
@@ -7087,6 +7181,97 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lefthook-darwin-arm64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-darwin-arm64@npm:1.6.12"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lefthook-darwin-x64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-darwin-x64@npm:1.6.12"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lefthook-freebsd-arm64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-freebsd-arm64@npm:1.6.12"
+  conditions: os=freebsd & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lefthook-freebsd-x64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-freebsd-x64@npm:1.6.12"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lefthook-linux-arm64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-linux-arm64@npm:1.6.12"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lefthook-linux-x64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-linux-x64@npm:1.6.12"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lefthook-windows-arm64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-windows-arm64@npm:1.6.12"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lefthook-windows-x64@npm:1.6.12":
+  version: 1.6.12
+  resolution: "lefthook-windows-x64@npm:1.6.12"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lefthook@npm:^1.6.12":
+  version: 1.6.12
+  resolution: "lefthook@npm:1.6.12"
+  dependencies:
+    lefthook-darwin-arm64: "npm:1.6.12"
+    lefthook-darwin-x64: "npm:1.6.12"
+    lefthook-freebsd-arm64: "npm:1.6.12"
+    lefthook-freebsd-x64: "npm:1.6.12"
+    lefthook-linux-arm64: "npm:1.6.12"
+    lefthook-linux-x64: "npm:1.6.12"
+    lefthook-windows-arm64: "npm:1.6.12"
+    lefthook-windows-x64: "npm:1.6.12"
+  dependenciesMeta:
+    lefthook-darwin-arm64:
+      optional: true
+    lefthook-darwin-x64:
+      optional: true
+    lefthook-freebsd-arm64:
+      optional: true
+    lefthook-freebsd-x64:
+      optional: true
+    lefthook-linux-arm64:
+      optional: true
+    lefthook-linux-x64:
+      optional: true
+    lefthook-windows-arm64:
+      optional: true
+    lefthook-windows-x64:
+      optional: true
+  bin:
+    lefthook: bin/index.js
+  checksum: 10c0/f69c5370eb44345ab148d40ffd929a3714a34fcc4119c9f261ca65cf0fbce77170e1e641032c8cfe72888ffbbe51bea2ea6a47c1cea6a9bf6c92c671c64efed9
+  languageName: node
+  linkType: hard
+
 "less-loader@npm:11.1.0":
   version: 11.1.0
   resolution: "less-loader@npm:11.1.0"
@@ -9827,6 +10012,18 @@ __metadata:
   bin:
     svgo: ./bin/svgo
   checksum: 10c0/a6badbd3d1d6dbb177f872787699ab34320b990d12e20798ecae915f0008796a0f3c69164f1485c9def399e0ce0a5683eb4a8045e51a5e1c364bb13a0d9f79e1
+  languageName: node
+  linkType: hard
+
+"swc-loader@npm:^0.2.6":
+  version: 0.2.6
+  resolution: "swc-loader@npm:0.2.6"
+  dependencies:
+    "@swc/counter": "npm:^0.1.3"
+  peerDependencies:
+    "@swc/core": ^1.2.147
+    webpack: ">=2"
+  checksum: 10c0/b06926c5cb153931589c2166aa4c7c052cc53c68758acdda480d1eb59ecddf7d74b168e33166c4f807cc9dbae4395de9d80a14ad43e265fffaa775638abf71ce
   languageName: node
   linkType: hard
 
