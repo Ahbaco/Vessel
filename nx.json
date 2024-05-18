@@ -32,12 +32,15 @@
         "skipPackageJson": true,
         "strict": true,
         "directory": "apps"
-      }
-    },
-    "@nx/webpack": {
-      "configuration": {
+      },
+      "library": {
+        "linter": "none",
+        "unitTestRunner": "none",
         "skipFormat": true,
-        "compiler": "swc"
+        "projectNameAndRootFormat": "derived",
+        "skipPackageJson": true,
+        "strict": true,
+        "directory": "packages"
       }
     }
   }

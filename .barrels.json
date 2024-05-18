@@ -1,0 +1,4 @@
+{
+  "directory": ["packages/config/src"],
+  "delete": true
+}
