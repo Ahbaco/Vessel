@@ -16,8 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vessel/config": ["packages/config/src/index.ts"],
-      "@vessel/common": ["packages/common/src/index.ts"]
+      "@vessel/config/*": ["packages/config/src/*"],
+      "@vessel/common/*": ["packages/common/src/*"],
+      "@vessel/database/*": ["packages/database/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

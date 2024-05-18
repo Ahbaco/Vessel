@@ -6,7 +6,10 @@
     "packages/common/src/enums",
     "packages/common/src/rmq",
     "packages/common/src/constants",
-    "packages/common/src/utils"
+    "packages/common/src/utils",
+    "packages/database/src/connections",
+    "packages/database/src/enums",
+    "packages/database/src/repositories"
   ],
   "delete": true
 }

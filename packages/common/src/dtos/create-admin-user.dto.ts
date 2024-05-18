@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Role } from "@vessel/database";
+import { Role } from "@vessel/database/enums";
 import { IsEnum, IsNotEmpty, NotEquals } from "class-validator";
 import { Match } from "../decorators/match.decorator";
 
