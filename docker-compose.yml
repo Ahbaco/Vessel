@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  mongodb:
+    container_name: Vessel.MongoDB
+    image: docker.io/bitnami/mongodb:7.0
+    volumes:
+      - 'mongodb_data:/bitnami/mongodb'
+    ports:
+      - '27017:27017'
+  rmq:
+    container_name: Vessel.RMQ
+    image: rabbitmq
+    ports:
+      - '5672:5672'
+  smtp:
+    container_name: Vessel.SMTP
+    platform: linux/x86_64
+    image: mailhog/mailhog
+    logging:
+      driver: "none"
+    ports:
+      - "8003:1025"
+      - "8100:8025"
+
+volumes:
+  mongodb_data:
+    driver: local 
