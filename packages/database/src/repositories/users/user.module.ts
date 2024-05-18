@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { Connections } from "@vessel/database";
+import { Connections } from "@vessel/database/enums";
+import { User, UserSchema } from "@vessel/database/schemas";
 import { UserRepository } from "./user.repository";
-import { User, UserSchema } from "./user.schema";
 
 @Module({
   imports: [

@@ -8,7 +8,7 @@ import {
   Types,
   UpdateQuery,
 } from "mongoose";
-import { SchemaDocument } from "./schema";
+import { SchemaDocument } from "../schemas/schema";
 
 type StoreOptions<T> = Omit<T, "_id">;
 

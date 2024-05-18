@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { SchemaDocument } from "@vessel/database";
+import { SchemaDocument } from "./schema";
 
 @Schema({ versionKey: false })
 export class Claim extends SchemaDocument {

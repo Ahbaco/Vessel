@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { SchemaDocument } from "@vessel/database";
 import { Types } from "mongoose";
-import { User } from "../users/user.schema";
+import { SchemaDocument } from "./schema";
+import { User } from "./user.schema";
 
 @Schema({ versionKey: false })
 export class Token extends SchemaDocument {

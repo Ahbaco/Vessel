@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { Connections } from "@vessel/database";
+import { Connections } from "@vessel/database/enums";
+import { Token, TokenSchema } from "../../schemas/token.schema";
 import { TokenRepository } from "./token.repository";
-import { Token, TokenSchema } from "./token.schema";
 
 @Module({
   imports: [

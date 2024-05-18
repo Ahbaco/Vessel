@@ -2,10 +2,10 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
 import { Role } from "@vessel/database/enums";
 import { Types } from "mongoose";
-import { Claim } from "../claims/claim.schema";
-import { SchemaDocument } from "../schema";
-import { Team } from "../teams/team.schema";
-import { Token } from "../tokens/token.schema";
+import { Claim } from "./claim.schema";
+import { SchemaDocument } from "./schema";
+import { Team } from "./team.schema";
+import { Token } from "./token.schema";
 
 @Schema({ versionKey: false, timestamps: true })
 export class User extends SchemaDocument {

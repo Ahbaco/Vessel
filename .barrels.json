@@ -9,7 +9,8 @@
     "packages/common/src/utils",
     "packages/database/src/connections",
     "packages/database/src/enums",
-    "packages/database/src/repositories"
+    "packages/database/src/repositories",
+    "packages/database/src/schemas"
   ],
   "delete": true
 }

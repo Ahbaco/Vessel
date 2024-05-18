@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { Connections } from "@vessel/database";
+import { Connections } from "@vessel/database/enums";
+import { Claim, ClaimSchema } from "../../schemas/claim.schema";
 import { ClaimRepository } from "./claim.repository";
-import { Claim, ClaimSchema } from "./claim.schema";
 
 @Module({
   imports: [

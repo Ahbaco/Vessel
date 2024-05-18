@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { Connections } from "@vessel/database";
+import { Team, TeamSchema } from "../../schemas/team.schema";
 import { TeamRepository } from "./team.repository";
-import { Team, TeamSchema } from "./team.schema";
 
 @Module({
   imports: [

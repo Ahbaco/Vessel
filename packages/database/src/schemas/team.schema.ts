@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { SchemaDocument } from "@vessel/database";
 import { Types } from "mongoose";
-import { Plan } from "../plans/plan.schema";
-import { User } from "../users/user.schema";
+import { Plan } from "./plan.schema";
+import { SchemaDocument } from "./schema";
+import { User } from "./user.schema";
 
 @Schema({ versionKey: false, timestamps: true })
 export class Team extends SchemaDocument {
