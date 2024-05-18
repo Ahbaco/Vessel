@@ -1,4 +1,12 @@
 {
-  "directory": ["packages/config/src"],
+  "directory": [
+    "packages/config/src",
+    "packages/common/src/decorators",
+    "packages/common/src/dtos",
+    "packages/common/src/enums",
+    "packages/common/src/rmq",
+    "packages/common/src/constants",
+    "packages/common/src/utils"
+  ],
   "delete": true
 }
