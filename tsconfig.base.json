@@ -16,9 +16,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@vessel/config": ["packages/config/src"],
       "@vessel/config/*": ["packages/config/src/*"],
-      "@vessel/common/*": ["packages/common/src/*"],
-      "@vessel/database/*": ["packages/database/src/*"]
+      "@vessel/database": ["packages/database/src"],
+      "@vessel/database/*": ["packages/database/src/*"],
+      "@vessel/common": ["packages/common/src"],
+      "@vessel/common/*": ["packages/common/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

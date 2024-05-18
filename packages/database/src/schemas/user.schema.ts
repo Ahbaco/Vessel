@@ -26,7 +26,7 @@ export class User extends SchemaDocument {
   selectedTeamId?: Types.ObjectId;
 
   @ApiProperty()
-  @Prop({ enum: Role, required: true })
+  @Prop({ enum: Role, required: true, type: () => Role })
   role: Role;
 
   @Prop({ required: false, select: false })

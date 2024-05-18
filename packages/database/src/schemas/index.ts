@@ -4,6 +4,7 @@
 
 export * from "./claim.schema";
 export * from "./plan.schema";
+export * from "./schema";
 export * from "./team.schema";
 export * from "./token.schema";
 export * from "./user.schema";
