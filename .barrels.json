@@ -1,14 +1,17 @@
 {
   "directory": [
-    "libs/config/src",
-    "libs/database/src",
-    "libs/common/src/decorators",
-    "libs/common/src/dtos",
-    "libs/common/src/enums",
-    "libs/common/src/i18n",
-    "libs/common/src/rmq",
-    "libs/common/src/constants",
-    "libs/common/src/utils"
+    "packages/config/src",
+    "packages/common/src/decorators",
+    "packages/common/src/dtos",
+    "packages/common/src/enums",
+    "packages/common/src/rmq",
+    "packages/common/src/constants",
+    "packages/common/src/utils",
+    "packages/database/src/connections",
+    "packages/database/src/enums",
+    "packages/database/src/repositories",
+    "packages/database/src/schemas",
+    "packages/common/src/interfaces"
   ],
   "delete": true
 }

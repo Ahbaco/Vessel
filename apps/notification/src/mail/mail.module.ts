@@ -1,6 +1,7 @@
 import { MailerModule } from "@nestjs-modules/mailer";
 import { Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
+import { RmqModule, RmqService } from "@vessel/common/rmq";
 import { MailController } from "./mail.controller";
 import { MailService } from "./mail.service";
 
@@ -26,8 +27,9 @@ import { MailService } from "./mail.service";
         },
       }),
     }),
+    RmqModule,
   ],
   controllers: [MailController],
-  providers: [MailService],
+  providers: [MailService, RmqService],
 })
 export class MailModule {}

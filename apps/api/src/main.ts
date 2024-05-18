@@ -1,4 +1,4 @@
-import { ValidationPipe } from "@nestjs/common";
+import { Logger, ValidationPipe } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
@@ -26,5 +26,8 @@ async function bootstrap() {
     jsonDocumentUrl: "/docs.json",
   });
   await app.listen(config.get("api.port") as number);
+
+  Logger.log(`Server running on http://localhost:${config.get("api.port")}`);
+  Logger.log(`Swagger docs at http://localhost:${config.get("api.port")}/docs`);
 }
 bootstrap();

@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "strictPropertyInitialization": false,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@vessel/config": ["packages/config/src"],
+      "@vessel/config/*": ["packages/config/src/*"],
+      "@vessel/database": ["packages/database/src"],
+      "@vessel/database/*": ["packages/database/src/*"],
+      "@vessel/common": ["packages/common/src"],
+      "@vessel/common/*": ["packages/common/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

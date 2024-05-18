@@ -8,7 +8,7 @@ export default function TempPassword({ password }: { password: string }) {
       <Tailwind>
         <Body className="bg-white my-auto px-2">
           <Container>
-            <Text className="text-3xl">Tu password: {password}</Text>
+            <Text className="text-3xl text-red-500">Tu password: {password}</Text>
           </Container>
         </Body>
       </Tailwind>

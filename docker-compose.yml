@@ -1,51 +1,6 @@
 version: '3.9'
 
 services:
-  api:
-    container_name: Vessel.API
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
-      target: dev
-    command: pnpm run start:dev api
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    ports:
-      - '3333:3333'
-    depends_on:
-      - mongodb
-      - rmq
-      - auth
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-  auth:
-    container_name: Vessel.Auth
-    build:
-      context: .
-      dockerfile: ./apps/auth/Dockerfile
-      target: dev
-    command: pnpm run start:dev auth
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    depends_on:
-      - rmq
-      - mongodb
-      - notification
-  notification:
-    container_name: Vessel.Notification
-    build:
-      context: .
-      dockerfile: ./apps/notification/Dockerfile
-      target: dev
-    command: pnpm run start:dev notification
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    depends_on:
-      - rmq
   mongodb:
     container_name: Vessel.MongoDB
     image: docker.io/bitnami/mongodb:7.0

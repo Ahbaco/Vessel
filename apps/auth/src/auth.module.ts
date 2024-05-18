@@ -1,12 +1,19 @@
 import { Module } from "@nestjs/common";
-import { RmqModule } from "@vessel/common/rmq";
+import { RmqModule, RmqQueues, RmqServices } from "@vessel/common/rmq";
 import { EnvModule } from "@vessel/config";
-import { DatabaseModule, UserModule } from "@vessel/database";
+import { DatabaseModule } from "@vessel/database/database.module";
+import { UserModule } from "@vessel/database/repositories";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
 
 @Module({
-  imports: [EnvModule, DatabaseModule, RmqModule, UserModule],
+  imports: [
+    EnvModule,
+    DatabaseModule,
+    RmqModule,
+    UserModule,
+    RmqModule.register({ name: RmqServices.Notification, queue: RmqQueues.Notification }),
+  ],
   controllers: [AuthController],
   providers: [AuthService],
 })

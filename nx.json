@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s"
+    ],
+    "sharedGlobals": []
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/nest": {
+      "application": {
+        "linter": "none",
+        "unitTestRunner": "none",
+        "e2eTestRunner": "none",
+        "skipFormat": true,
+        "projectNameAndRootFormat": "derived",
+        "skipPackageJson": true,
+        "strict": true,
+        "directory": "apps"
+      },
+      "library": {
+        "linter": "none",
+        "unitTestRunner": "none",
+        "skipFormat": true,
+        "projectNameAndRootFormat": "derived",
+        "skipPackageJson": true,
+        "strict": true,
+        "directory": "packages"
+      }
+    }
+  }
+}
