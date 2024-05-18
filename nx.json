@@ -20,5 +20,25 @@
         "previewTargetName": "preview"
       }
     }
-  ]
+  ],
+  "generators": {
+    "@nx/nest": {
+      "application": {
+        "linter": "none",
+        "unitTestRunner": "none",
+        "e2eTestRunner": "none",
+        "skipFormat": true,
+        "projectNameAndRootFormat": "derived",
+        "skipPackageJson": true,
+        "strict": true,
+        "directory": "apps"
+      }
+    },
+    "@nx/webpack": {
+      "configuration": {
+        "skipFormat": true,
+        "compiler": "swc"
+      }
+    }
+  }
 }
