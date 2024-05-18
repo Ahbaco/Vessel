@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nx run-many --target=serve --projects= --parallel"
+    "dev": "nx run-many --target=serve --projects=api,auth,notification --parallel"
   },
   "dependencies": {
     "@nestjs-modules/mailer": "^2.0.2",
