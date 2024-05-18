@@ -1,13 +1,19 @@
 import { Injectable } from "@nestjs/common";
-import { RpcException } from "@nestjs/microservices";
+import { ClientProxy, RpcException } from "@nestjs/microservices";
+import { InjectNotificationService } from "@vessel/common/decorators";
 import { CreateAdminUserDto } from "@vessel/common/dtos";
+import { NotificationEvent } from "@vessel/common/enums";
+import { SendTempPasswordEmail } from "@vessel/common/interfaces";
 import { randomString } from "@vessel/common/utils";
 import { UserRepository } from "@vessel/database/repositories";
 import { hash } from "argon2";
 
 @Injectable()
 export class AuthService {
-  constructor(private users: UserRepository) {}
+  constructor(
+    private users: UserRepository,
+    @InjectNotificationService() private notificationClient: ClientProxy,
+  ) {}
 
   private async checkEmailIsValid(email: string) {
     if (email.endsWith("@ahbaco.com")) {
@@ -54,6 +60,13 @@ export class AuthService {
     const user = await this.users.store({
       ...data,
       password: await this.hashPassword(plainPassword),
+    });
+
+    this.notificationClient.emit<never, SendTempPasswordEmail>(NotificationEvent.SendTempPassword, {
+      name: user.name,
+      surname: user.surname,
+      email: user.email,
+      password: plainPassword,
     });
 
     return { message: "auth.user_created", user };

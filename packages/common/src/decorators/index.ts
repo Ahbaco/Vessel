@@ -5,4 +5,5 @@
 export * from "./api-error.decorator";
 export * from "./api-return.decorator";
 export * from "./inject-auth-service.decorator";
+export * from "./inject-notification-service.decorator";
 export * from "./match.decorator";
