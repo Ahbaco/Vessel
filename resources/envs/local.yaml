@@ -6,7 +6,7 @@ app:
 api:
   port: 3333
 mongodb:
-  uri: 'mongodb://mongodb:27017'
+  uri: 'mongodb://localhost:27017'
   master: 'master_local_db'
   system: 'system_local_db'
 rate:
@@ -36,4 +36,4 @@ smtp:
   secure: false
   ignoreTLS: true
 rmq:
-  uri: 'amqp://rmq:5672'
+  uri: 'amqp://localhost:5672'
