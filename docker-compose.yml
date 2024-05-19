@@ -10,9 +10,10 @@ services:
       - '27017:27017'
   rmq:
     container_name: Vessel.RMQ
-    image: rabbitmq
+    image: rabbitmq:3.13-management
     ports:
       - '5672:5672'
+      - '15672:15672'
   smtp:
     container_name: Vessel.SMTP
     platform: linux/x86_64
