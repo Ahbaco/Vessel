@@ -21,7 +21,9 @@
       "@vessel/database": ["packages/database/src"],
       "@vessel/database/*": ["packages/database/src/*"],
       "@vessel/common": ["packages/common/src"],
-      "@vessel/common/*": ["packages/common/src/*"]
+      "@vessel/common/*": ["packages/common/src/*"],
+      "@vessel/logger": ["packages/logger/src"],
+      "@vessel/logger/*": ["packages/logger/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

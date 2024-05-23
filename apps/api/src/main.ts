@@ -1,11 +1,15 @@
-import { Logger, ValidationPipe } from "@nestjs/common";
+import { ValidationPipe } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
 import { ApiModule } from "./api.module";
 
 async function bootstrap() {
-  const app = await NestFactory.create(ApiModule);
+  const app = await NestFactory.create(ApiModule, { bufferLogs: true });
+  // Configure Pino logger
+  app.useLogger(app.get(Logger));
+  app.useGlobalInterceptors(new LoggerErrorInterceptor());
   // Validation Pipe
   app.useGlobalPipes(new ValidationPipe());
   // Config Service
@@ -26,8 +30,5 @@ async function bootstrap() {
     jsonDocumentUrl: "/docs.json",
   });
   await app.listen(config.get("api.port") as number);
-
-  Logger.log(`Server running on http://localhost:${config.get("api.port")}`);
-  Logger.log(`Swagger docs at http://localhost:${config.get("api.port")}/docs`);
 }
 bootstrap();

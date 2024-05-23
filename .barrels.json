@@ -11,7 +11,8 @@
     "packages/database/src/enums",
     "packages/database/src/repositories",
     "packages/database/src/schemas",
-    "packages/common/src/interfaces"
+    "packages/common/src/interfaces",
+    "packages/logger/src"
   ],
   "delete": true
 }
