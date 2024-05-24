@@ -14,7 +14,11 @@ export class MailController {
 
   @EventPattern(NotificationEvent.SendTempPassword)
   async sendTempPasswordMail(@Payload() data: SendTempPasswordEmail, @Ctx() ctx: RmqContext) {
-    this.logger.info(`${ctx.getPattern()} - Sending temp password email 1`);
+    this.logger.info({
+      message: `${ctx.getPattern()} - Sending temp password email data`,
+      data,
+    });
+
     try {
       await this.mailService.sendTempPasswordMail(data);
     } catch (err) {
