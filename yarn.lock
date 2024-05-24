@@ -2328,6 +2328,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@logtail/core@npm:^0.4.21":
+  version: 0.4.21
+  resolution: "@logtail/core@npm:0.4.21"
+  dependencies:
+    "@logtail/tools": "npm:^0.4.21"
+    "@logtail/types": "npm:^0.4.20"
+    serialize-error: "npm:^8.1.0"
+  checksum: 10c0/00998c91e66faf99668088f51e804b6b641c99c9e71eebea1d7d345a20aef2e8f204dc89a4dd2e3c95c9eddd7e250e19890438a20126df89c4b64cfcd9a7f33f
+  languageName: node
+  linkType: hard
+
+"@logtail/node@npm:^0.4.21":
+  version: 0.4.21
+  resolution: "@logtail/node@npm:0.4.21"
+  dependencies:
+    "@logtail/core": "npm:^0.4.21"
+    "@logtail/types": "npm:^0.4.20"
+    "@msgpack/msgpack": "npm:^2.5.1"
+    "@types/stack-trace": "npm:^0.0.29"
+    cross-fetch: "npm:^3.0.4"
+    minimatch: "npm:^3.0.4"
+    serialize-error: "npm:^8.1.0"
+    stack-trace: "npm:^0.0.10"
+  checksum: 10c0/487650e68ca2699ef73e035b01a5567d7b583fa58a598bedb8683ad15745a2d8c765d25c80575bafb867acc877adedf25a67834b132e78a17bad435459f3792c
+  languageName: node
+  linkType: hard
+
+"@logtail/pino@npm:^0.4.21":
+  version: 0.4.21
+  resolution: "@logtail/pino@npm:0.4.21"
+  dependencies:
+    "@logtail/node": "npm:^0.4.21"
+    "@logtail/types": "npm:^0.4.20"
+    pino-abstract-transport: "npm:^1.0.0"
+  peerDependencies:
+    pino: ^7.0.0 || ^8.0.0
+  checksum: 10c0/f890efe55403d596256da5c79c765b30ee550c42427a755049c659f9e4ab6a9c59c87d718a3b5b01a6e6b2940953422dbbb4d244526807e33c91c4b2a6a7ba03
+  languageName: node
+  linkType: hard
+
+"@logtail/tools@npm:^0.4.21":
+  version: 0.4.21
+  resolution: "@logtail/tools@npm:0.4.21"
+  dependencies:
+    "@logtail/types": "npm:^0.4.20"
+  checksum: 10c0/f1bdf7759c89c8015569f2541e363a96665037a9165af9238b1ab949613672c019528b3c6c37b77ce68d0b93006d92b11ca824a332915e21bebbd7d12441a87c
+  languageName: node
+  linkType: hard
+
+"@logtail/types@npm:^0.4.20":
+  version: 0.4.20
+  resolution: "@logtail/types@npm:0.4.20"
+  checksum: 10c0/cb3c41cdd8f484cfeb70c369aa88700dc6731e10beab6652a4bbdd27dfa50657034e3463243e7255e805ab591fe2ed7ecd71fa953fca8833206610fd817f6902
+  languageName: node
+  linkType: hard
+
 "@lukeed/csprng@npm:^1.0.0":
   version: 1.1.0
   resolution: "@lukeed/csprng@npm:1.1.0"
@@ -2348,6 +2404,13 @@ __metadata:
   dependencies:
     sparse-bitfield: "npm:^3.0.3"
   checksum: 10c0/2c3fa88eaa26be671a3f95866049612bb5a29532e73a685faf2b4a85487a903cecf889e91cc15701ef144483a8ed5b24f54e28155f87fb9d65d0656bb288ad5f
+  languageName: node
+  linkType: hard
+
+"@msgpack/msgpack@npm:^2.5.1":
+  version: 2.8.0
+  resolution: "@msgpack/msgpack@npm:2.8.0"
+  checksum: 10c0/5964ed3daad9ccf314238da81c91152dc693bca167b2469445c1d3ce0495443612e543d052281061a91ec48ed44a6a49dd3a334b5d0dbe2dc2db6ea6143e5787
   languageName: node
   linkType: hard
 
@@ -4789,6 +4852,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/stack-trace@npm:^0.0.29":
+  version: 0.0.29
+  resolution: "@types/stack-trace@npm:0.0.29"
+  checksum: 10c0/401a1f80039706dd9f058336c797702ef3837bf34a663e4213c3b58be255b0649d699f65f8652976fb517146926c2ed5ebc8b6897e7460b99e16b84adc7fc985
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.3
   resolution: "@types/stack-utils@npm:2.0.3"
@@ -4867,6 +4937,7 @@ __metadata:
   resolution: "@vessel/source@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.7.3"
+    "@logtail/pino": "npm:^0.4.21"
     "@nestjs-modules/mailer": "npm:^2.0.2"
     "@nestjs/common": "npm:^10.0.2"
     "@nestjs/config": "npm:^3.2.2"
@@ -6701,6 +6772,15 @@ __metadata:
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: 10c0/157cbc59b2430ae9a90034a5f3a1b398b6738bf510f713edc4d4e45e169bc514d3d99dd34d8d01ca7ae7830b5b8b537e46ae8f3c8f932371b0875c0151d7ec91
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.0.4":
+  version: 3.1.8
+  resolution: "cross-fetch@npm:3.1.8"
+  dependencies:
+    node-fetch: "npm:^2.6.12"
+  checksum: 10c0/4c5e022ffe6abdf380faa6e2373c0c4ed7ef75e105c95c972b6f627c3f083170b6886f19fb488a7fa93971f4f69dcc890f122b0d97f0bf5f41ca1d9a8f58c8af
   languageName: node
   linkType: hard
 
@@ -11605,7 +11685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1":
+"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -13987,6 +14067,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"serialize-error@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "serialize-error@npm:8.1.0"
+  dependencies:
+    type-fest: "npm:^0.20.2"
+  checksum: 10c0/8cfd89f43ca93e283c5f1d16178a536bdfac9bc6029f4a9df988610cc399bc4f2478d1f10ce40b9dff66b863a5158a19b438fbec929045c96d92174f6bca1e88
+  languageName: node
+  linkType: hard
+
 "serialize-javascript@npm:^6.0.0, serialize-javascript@npm:^6.0.1":
   version: 6.0.2
   resolution: "serialize-javascript@npm:6.0.2"
@@ -14425,6 +14514,13 @@ __metadata:
   dependencies:
     minipass: "npm:^7.0.3"
   checksum: 10c0/e5a1e23a4057a86a97971465418f22ea89bd439ac36ade88812dd920e4e61873e8abd6a9b72a03a67ef50faa00a2daf1ab745c5a15b46d03e0544a0296354227
+  languageName: node
+  linkType: hard
+
+"stack-trace@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "stack-trace@npm:0.0.10"
+  checksum: 10c0/9ff3dabfad4049b635a85456f927a075c9d0c210e3ea336412d18220b2a86cbb9b13ec46d6c37b70a302a4ea4d49e30e5d4944dd60ae784073f1cde778ac8f4b
   languageName: node
   linkType: hard
 

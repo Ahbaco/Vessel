@@ -1,18 +1,24 @@
 import { Module } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
+import { EnvModule } from "@vessel/config";
 import { LoggerModule as PinoLoggerModule } from "nestjs-pino";
 
 @Module({
   imports: [
-    PinoLoggerModule.forRoot({
-      pinoHttp: {
-        transport: {
-          target: "pino-pretty",
-          options: {
-            singleLine: true,
-            colorize: true,
+    EnvModule,
+    PinoLoggerModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        pinoHttp: {
+          transport: {
+            target: "@logtail/pino",
+            options: {
+              sourceToken: config.get("logtail.token"),
+              sync: false,
+            },
           },
         },
-      },
+      }),
     }),
   ],
 })

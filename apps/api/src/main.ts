@@ -2,13 +2,12 @@ import { ValidationPipe } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
+import { LoggerErrorInterceptor } from "nestjs-pino";
 import { ApiModule } from "./api.module";
 
 async function bootstrap() {
-  const app = await NestFactory.create(ApiModule, { bufferLogs: true });
-  // Configure Pino logger
-  app.useLogger(app.get(Logger));
+  const app = await NestFactory.create(ApiModule, { bufferLogs: false });
+  // Configure Pino logger Interceptor
   app.useGlobalInterceptors(new LoggerErrorInterceptor());
   // Validation Pipe
   app.useGlobalPipes(new ValidationPipe());

@@ -58,5 +58,9 @@ export const configSchema = required(
     rmq: object({
       uri: string(),
     }),
+    // Logtail
+    logtail: object({
+      token: string(),
+    }),
   }),
 );

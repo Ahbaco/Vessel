@@ -37,3 +37,5 @@ smtp:
   ignoreTLS: true
 rmq:
   uri: 'amqp://localhost:5672'
+logtail:
+  token: 'AFQEiXAs7bGLdkwVcibudkVK'

@@ -11,6 +11,11 @@
     ],
     "sharedGlobals": []
   },
+  "targetDefaults": {
+    "build": {
+      "cache": false
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/webpack/plugin",

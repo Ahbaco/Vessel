@@ -7,6 +7,7 @@
     "dev": "nx run-many --target=serve --projects=api,auth,notification --parallel"
   },
   "dependencies": {
+    "@logtail/pino": "^0.4.21",
     "@nestjs-modules/mailer": "^2.0.2",
     "@nestjs/common": "^10.0.2",
     "@nestjs/config": "^3.2.2",
