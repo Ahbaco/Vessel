@@ -11,5 +11,5 @@ export * from "./teams/team.module";
 export * from "./teams/team.repository";
 export * from "./tokens/token.module";
 export * from "./tokens/token.repository";
-export * from "./users/user.module";
+export * from "./users/user-repository.module";
 export * from "./users/user.repository";

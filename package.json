@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nx run-many --target=serve --projects=api,auth,notification --parallel"
+    "dev": "nx run-many --target=serve --projects=api,auth,notification,admin --parallel=10"
   },
   "dependencies": {
     "@logtail/pino": "^0.4.21",

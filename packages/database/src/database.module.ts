@@ -1,9 +1,10 @@
-import { Module } from "@nestjs/common";
+import { Global, Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { MasterConnection } from "./connections/master.connection";
 import { SystemConnection } from "./connections/system.connection";
 import { Connections } from "./enums/connection.enum";
 
+@Global()
 @Module({
   imports: [
     MongooseModule.forRootAsync({

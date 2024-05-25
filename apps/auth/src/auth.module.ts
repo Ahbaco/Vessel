@@ -2,7 +2,7 @@ import { Module } from "@nestjs/common";
 import { JwtModule } from "@vessel/common/modules";
 import { RmqModule, RmqQueues, RmqServices } from "@vessel/common/rmq";
 import { DatabaseModule } from "@vessel/database/database.module";
-import { TokenModule, UserModule } from "@vessel/database/repositories";
+import { TokenModule, UserRepositoryModule } from "@vessel/database/repositories";
 import { LoggerModule } from "@vessel/logger";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
@@ -14,7 +14,7 @@ import { AuthService } from "./auth.service";
     JwtModule,
     DatabaseModule,
     RmqModule,
-    UserModule,
+    UserRepositoryModule,
     TokenModule,
   ],
   controllers: [AuthController],
