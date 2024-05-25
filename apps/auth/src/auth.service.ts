@@ -66,6 +66,7 @@ export class AuthService {
 
     const user = await this.users.store({
       ...data,
+      verifiedAt: new Date(),
       password: await this.hashPassword(plainPassword),
     });
 
