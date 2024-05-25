@@ -18,10 +18,11 @@ export class AuthController {
   constructor(@InjectAuthService() private authClient: ClientProxy) {}
 
   @ApiError(422)
-  @ApiError(400)
+  @ApiError(403)
   @ApiError(401)
+  @ApiError(400)
   @ApiReturn(RegisterModeratorResponse, 201)
-  @Authorized({ role: Role.Admin })
+  @Authorized({ role: Role.Admin, verified: false })
   @Post("register/admin")
   async registerModerator(@Body() input: CreateAdminUserDto) {
     return await lastValueFrom(this.authClient.send(AuthEvent.RegisterAdmin, input));
