@@ -29,7 +29,7 @@ export class User extends SchemaDocument {
   @Prop({ enum: Role, required: true, type: () => Role })
   role: Role;
 
-  @Prop({ required: false, select: false })
+  @Prop({ required: false })
   password?: string;
 
   @ApiProperty()

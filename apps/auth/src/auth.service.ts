@@ -1,12 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { ClientProxy, RpcException } from "@nestjs/microservices";
 import { InjectNotificationService } from "@vessel/common/decorators";
-import { CreateAdminUserDto } from "@vessel/common/dtos";
+import { CreateAdminUserDto, LoginUserDto } from "@vessel/common/dtos";
 import { NotificationEvent } from "@vessel/common/enums";
 import { SendTempPasswordEmail } from "@vessel/common/interfaces";
 import { randomString } from "@vessel/common/utils";
 import { UserRepository } from "@vessel/database/repositories";
-import { hash } from "argon2";
+import { hash, verify } from "argon2";
 
 @Injectable()
 export class AuthService {
@@ -70,5 +70,31 @@ export class AuthService {
     });
 
     return { message: "auth.user_created", user };
+  }
+
+  async validateUser(input: LoginUserDto) {
+    const user = await this.users.one({
+      filter: { email: input.email },
+    });
+
+    if (!user) {
+      throw new RpcException({
+        statusCode: 401,
+        message: "auth.invalid_credentials",
+      });
+    }
+
+    const isValid = await verify(String(user.password), input.password);
+
+    if (!isValid) {
+      throw new RpcException({
+        statusCode: 401,
+        message: "auth.invalid_credentials",
+      });
+    }
+
+    const { password, ...data } = user;
+
+    return data;
   }
 }

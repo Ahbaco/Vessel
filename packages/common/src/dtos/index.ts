@@ -3,3 +3,4 @@
  */
 
 export * from "./create-admin-user.dto";
+export * from "./login-user.dto";
