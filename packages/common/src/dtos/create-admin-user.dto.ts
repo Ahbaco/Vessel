@@ -23,8 +23,6 @@ export class CreateAdminUserDto {
 
   @ApiProperty({ enum: Role, type: () => Role })
   @IsEnum(Role)
-  @NotEquals(Role.TenantAdmin)
-  @NotEquals(Role.TenantMember)
-  @NotEquals(Role.TenantOwner)
+  @NotEquals(Role.Tenant)
   role: Role;
 }

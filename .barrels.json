@@ -13,7 +13,8 @@
     "packages/database/src/schemas",
     "packages/common/src/interfaces",
     "packages/logger/src",
-    "packages/common/src/modules"
+    "packages/common/src/modules",
+    "packages/common/src/guards"
   ],
   "delete": true
 }

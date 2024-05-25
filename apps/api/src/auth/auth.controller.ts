@@ -1,10 +1,11 @@
 import { Body, Controller, Get, Post, Req, UseGuards } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
-import { AuthGuard } from "@nestjs/passport";
-import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
-import { ApiError, ApiReturn, InjectAuthService } from "@vessel/common/decorators";
+import { ApiTags } from "@nestjs/swagger";
+import { ApiError, ApiReturn, Authorized, InjectAuthService } from "@vessel/common/decorators";
 import { CreateAdminUserDto, LoginUserDto } from "@vessel/common/dtos";
 import { AuthEvent } from "@vessel/common/enums";
+import { LocalAuthGuard } from "@vessel/common/guards";
+import { Role } from "@vessel/database/enums";
 import { User } from "@vessel/database/schemas";
 import { Request } from "express";
 import { lastValueFrom } from "rxjs";
@@ -18,7 +19,9 @@ export class AuthController {
 
   @ApiError(422)
   @ApiError(400)
+  @ApiError(401)
   @ApiReturn(RegisterModeratorResponse, 201)
+  @Authorized({ role: Role.Admin })
   @Post("register/admin")
   async registerModerator(@Body() input: CreateAdminUserDto) {
     return await lastValueFrom(this.authClient.send(AuthEvent.RegisterAdmin, input));
@@ -27,7 +30,7 @@ export class AuthController {
   @ApiError(422)
   @ApiError(401)
   @ApiReturn(LoggedUserResponse, 200)
-  @UseGuards(AuthGuard("local"))
+  @UseGuards(LocalAuthGuard)
   @Post("login/local")
   async login(@Body() _credentials: LoginUserDto, @Req() req: Request) {
     const user = req.user;
@@ -43,8 +46,7 @@ export class AuthController {
 
   @ApiError(401)
   @ApiReturn(User, 200)
-  @ApiBearerAuth()
-  @UseGuards(AuthGuard("jwt"))
+  @Authorized()
   @Get("me")
   async getUser(@Req() req: Request) {
     return req.user;
