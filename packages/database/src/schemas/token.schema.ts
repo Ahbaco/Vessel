@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
+import { randomString } from "@vessel/common/utils";
 import { Types } from "mongoose";
 import { SchemaDocument } from "./schema";
 import { User } from "./user.schema";
@@ -11,8 +12,8 @@ export class Token extends SchemaDocument {
   name: string;
 
   @ApiProperty()
-  @Prop({ required: true })
-  value: string;
+  @Prop({ required: false, default: randomString(16, true) })
+  value?: string;
 
   @ApiProperty()
   @Prop({ required: true })
