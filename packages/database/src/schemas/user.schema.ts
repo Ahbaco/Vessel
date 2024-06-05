@@ -2,7 +2,6 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
 import { Role } from "@vessel/database/enums";
 import { Types } from "mongoose";
-import { Claim } from "./claim.schema";
 import { SchemaDocument } from "./schema";
 import { Team } from "./team.schema";
 import { Token } from "./token.schema";
@@ -22,10 +21,10 @@ export class User extends SchemaDocument {
   email: string;
 
   @ApiProperty()
-  @Prop({ type: Types.ObjectId, required: false })
-  selectedTeamId?: Types.ObjectId;
+  @Prop({ type: String, required: false })
+  selectedTeamId?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, enum: Role })
   @Prop({ enum: Role, required: true, type: () => Role })
   role: Role;
 
@@ -43,10 +42,6 @@ export class User extends SchemaDocument {
   @ApiProperty()
   @Prop({ type: [Types.ObjectId], ref: "Team", required: false })
   teams?: Team[];
-
-  @ApiProperty()
-  @Prop({ type: Map, of: [{ type: Types.ObjectId, ref: "Claim" }], required: false })
-  claims?: Map<string, Claim[]>;
 
   @ApiProperty()
   @Prop({ type: [Types.ObjectId], ref: "Token", required: false })
