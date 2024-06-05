@@ -3,6 +3,7 @@
  */
 
 export * from "./api-error.decorator";
+export * from "./api-paginated.decorator";
 export * from "./api-return.decorator";
 export * from "./authorized.decorator";
 export * from "./inject-admin-service.decorator";

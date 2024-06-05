@@ -1,19 +1,20 @@
 import { Controller, Get, Query } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
 import { ApiTags } from "@nestjs/swagger";
-import { ApiReturn, InjectAdminService } from "@vessel/common/decorators";
+import { ApiError, ApiPaginated, Authorized, InjectAdminService } from "@vessel/common/decorators";
 import { AdminEvent } from "@vessel/common/enums";
 import { User } from "@vessel/database/schemas";
 import { lastValueFrom } from "rxjs";
-import { PaginatedResponseDto } from "../dtos/paginated-response.dto";
 import { PaginationDto } from "../dtos/paginated.dto";
 
-@ApiTags("Users")
-@Controller("users")
+@Authorized()
+@ApiTags("Admin/Users")
+@Controller("admin/users")
 export class UserController {
   constructor(@InjectAdminService() private adminClient: ClientProxy) {}
 
-  @ApiReturn(PaginatedResponseDto<User>, 200)
+  @ApiError(400)
+  @ApiPaginated(User)
   @Get()
   async getUserPaginated(@Query() data: PaginationDto) {
     const { page, perPage, by, order } = data;

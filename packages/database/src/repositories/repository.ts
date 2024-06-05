@@ -93,7 +93,7 @@ export abstract class Repository<TDoc extends SchemaDocument> {
   }: PaginatedOptions<TDoc> = {}) {
     const order = sort ?? { _id: "descending" };
 
-    const [data, count] = await Promise.all([
+    const [results, count] = await Promise.all([
       this.model
         .find(filter, projection, { lean: true })
         .skip((page - 1) * perPage)
@@ -107,7 +107,7 @@ export abstract class Repository<TDoc extends SchemaDocument> {
       perPage,
       page,
       lastPage: Math.ceil(count / perPage),
-      data,
+      results,
     };
   }
 

@@ -1,15 +1,10 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsIn, IsInt, IsString, Max, Min } from "class-validator";
+import { IsIn, IsString } from "class-validator";
 
 export class PaginationDto {
-  @IsInt()
-  @Min(1)
   @ApiProperty()
   page: number;
 
-  @IsInt()
-  @Min(1)
-  @Max(100)
   @ApiProperty()
   perPage: number;
 
