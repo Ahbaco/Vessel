@@ -6,7 +6,7 @@ import { SchemaDocument } from "./schema";
 import { Team } from "./team.schema";
 import { Token } from "./token.schema";
 
-@Schema({ versionKey: false, timestamps: true })
+@Schema()
 export class User extends SchemaDocument {
   @ApiProperty()
   @Prop({ required: true })

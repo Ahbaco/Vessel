@@ -5,7 +5,7 @@ import { Plan } from "./plan.schema";
 import { SchemaDocument } from "./schema";
 import { User } from "./user.schema";
 
-@Schema({ versionKey: false, timestamps: true })
+@Schema()
 export class Team extends SchemaDocument {
   @ApiProperty()
   @Prop({ type: Types.ObjectId, ref: "Plan", required: true })

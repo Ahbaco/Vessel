@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 import { PlanLabel, PlanPeriod } from "../enums";
 import { SchemaDocument } from "./schema";
 
-@Schema({ versionKey: false, timestamps: true })
+@Schema()
 export class Plan extends SchemaDocument {
   @Prop({ required: true, unique: true })
   name: string;

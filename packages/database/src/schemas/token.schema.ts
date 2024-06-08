@@ -5,7 +5,7 @@ import { Types } from "mongoose";
 import { SchemaDocument } from "./schema";
 import { User } from "./user.schema";
 
-@Schema({ versionKey: false })
+@Schema()
 export class Token extends SchemaDocument {
   @ApiProperty()
   @Prop({ required: true })
