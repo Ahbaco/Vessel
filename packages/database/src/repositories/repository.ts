@@ -18,7 +18,7 @@ type UpdateOptions<T> = {
 };
 
 type AllOptions<T> = {
-  filter: FilterQuery<T>;
+  filter?: FilterQuery<T>;
   projection?: ProjectionType<T> | null;
 };
 
@@ -70,13 +70,13 @@ export abstract class Repository<TDoc extends SchemaDocument> {
     });
   }
 
-  async all({ filter, projection = {} }: AllOptions<TDoc>) {
+  async all({ filter = {}, projection = {} }: AllOptions<TDoc>) {
     return await this.model.find(filter, projection, {
       lean: true,
     });
   }
 
-  async allPopulated({ filter, projection = {}, populate }: AllPopulatedOptions<TDoc>) {
+  async allPopulated({ filter = {}, projection = {}, populate }: AllPopulatedOptions<TDoc>) {
     return await this.model.find(filter, projection, { lean: true }).populate(populate);
   }
 

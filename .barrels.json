@@ -14,7 +14,8 @@
     "packages/common/src/interfaces",
     "packages/logger/src",
     "packages/common/src/modules",
-    "packages/common/src/guards"
+    "packages/common/src/guards",
+    "packages/database/src/modules"
   ],
   "delete": true
 }

@@ -2,13 +2,13 @@ import { Injectable } from "@nestjs/common";
 import { InjectConnection, InjectModel } from "@nestjs/mongoose";
 import { Connections } from "@vessel/database/enums";
 import { Connection, Model } from "mongoose";
-import { Token } from "../../schemas/token.schema";
-import { Repository } from "../repository";
+import { User } from "../schemas";
+import { Repository } from "./repository";
 
 @Injectable()
-export class TokenRepository extends Repository<Token> {
+export class UserRepository extends Repository<User> {
   constructor(
-    @InjectModel(Token.name, Connections.Master) model: Model<Token>,
+    @InjectModel(User.name, Connections.Master) model: Model<User>,
     @InjectConnection(Connections.Master) connection: Connection,
   ) {
     super(model, connection);
